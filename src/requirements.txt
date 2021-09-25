@@ -1,0 +1,3 @@
+Kodistubs
+cefpython3==66.0
+requests

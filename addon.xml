@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="web.browser.primevideo" name="Amazon Prime Video" version="1.0.2" provider-name="maxzeroedge">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Amazon Prime Video</summary>
+		<description lang="en">
+			Browse the catalogue of Amazon Prime Video from your Kodi Installation
+		</description>
+		<license>GNU General Public License, v2</license>
+		<language></language>
+		<forum></forum>
+		<source></source>
+		<website>maxzeroedge.wordpress.com</website>
+		<email>maxzeroedge@gmail.com</email>
+		<news>Initial Release in progress</news>
+	</extension>
+</addon>
