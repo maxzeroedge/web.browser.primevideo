@@ -16,6 +16,8 @@ class PrimeVideoBrowser:
         cef.Shutdown()
 
 if __name__ == "__main__":
+    # installer.initiate_virtualenv()
     installer.update_requirements()
+    print("Ran successfully")
     # importlib.import_module('cefpython3')
     PrimeVideoBrowser()

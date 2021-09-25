@@ -5,10 +5,10 @@ try:
 except ImportError:
     from pip._internal import main as pipmain
 
+current_dir_path = os.path.dirname(os.path.realpath(__file__))
 
 def initiate_virtualenv():
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    dir_path = os.path.join(dir_path, 'kodi_env')
+    dir_path = os.path.join(current_dir_path, 'kodi_env')
     # sp.run(['python', '-m', 'venv', os.path.join(dir_path, 'kodi_env')])
     venv.create(dir_path, with_pip=True)
     if os.path.exists(os.path.join(dir_path, 'Scripts')): # TODO: Check for windows
@@ -17,8 +17,9 @@ def initiate_virtualenv():
         sp.run([os.path.join(dir_path, 'bin', 'activate')])
 
 def update_requirements():
-    with open('requirements.txt', 'r') as f:
-        requirements = f.readlines()
+    with open(os.path.join(current_dir_path, 'requirements.txt'), 'r') as f:
+        requirements = [l.strip() for l in f.readlines()]
+        print(requirements)
         # for requirement in requirements:
         #     pipmain(['install', requirement])
-        pipmain(['install', requirements])
+        pipmain(['install', requirements[0]])
